@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nad Al Sheba Gardens Phase 4 — 6BR Signature Villa | Parikshit Sharma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C4A35A;--gold-light:#E8CC87;--gold-pale:#F5E9C8;--dark:#0A0A0A;--dark-2:#111111;--dark-3:#1A1A1A;--dark-4:#222222;--grey:#888;--grey-light:#CCC;--white:#FAFAF8;--cream:#F2EDE4}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+body.rtl{direction:rtl;text-align:right}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+/* CURSOR — desktop only */
+@media(min-width:1024px){
+  body{cursor:none}
+  .cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+  .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(196,163,90,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .25s ease}
+  .cursor-ring.hover{width:60px;height:60px;border-color:var(--gold);background:rgba(196,163,90,.08)}
+}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:linear-gradient(to bottom,rgba(10,10,10,.97) 0%,transparent 100%)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;letter-spacing:.15em;color:var(--gold-light);white-space:nowrap}
+.nav-logo span{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.lang-switcher{display:flex;gap:4px}
+.lang-btn{font-size:9px;font-weight:600;letter-spacing:.15em;padding:6px 10px;border:1px solid #333;color:var(--grey);background:none;cursor:pointer;transition:all .3s;font-family:'Montserrat',sans-serif}
+.lang-btn.active,.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+.nav-cta{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:9px 20px;transition:all .3s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold);color:var(--dark)}
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/exterior.png') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.4) 55%,rgba(10,10,10,.75) 100%)}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 40px 60px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hero-left{flex:1;min-width:260px}
+.hero-label{font-size:9px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp 1s ease .3s forwards}
+.hero-label::before{content:'';display:block;width:36px;height:1px;background:var(--gold);flex-shrink:0}
+body.rtl .hero-label{flex-direction:row-reverse}
+body.rtl .hero-label::before{display:none}
+body.rtl .hero-label::after{content:'';display:block;width:36px;height:1px;background:var(--gold);flex-shrink:0}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6.5vw,96px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:28px;opacity:0;animation:fadeUp 1s ease .5s forwards}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:10px;letter-spacing:.18em;color:var(--grey-light);text-transform:uppercase;opacity:0;animation:fadeUp 1s ease .7s forwards}
+.hero-price-block{text-align:right;opacity:0;animation:fadeUp 1s ease .9s forwards;min-width:200px}
+body.rtl .hero-price-block{text-align:left}
+.hero-price-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--gold-light);line-height:1}
+.hero-price span{font-size:14px;letter-spacing:.1em;color:var(--grey)}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 1.5s forwards;z-index:2}
+.hero-scroll-text{font-size:7px;letter-spacing:.35em;text-transform:uppercase;color:var(--grey)}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+/* MARQUEE */
+.marquee-bar{background:var(--gold);padding:12px 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:marquee 35s linear infinite}
+.marquee-item{font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--dark);padding:0 40px}
+/* STATS */
+.stats-section{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#1e1e1e}
+@media(max-width:900px){.stats-section{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.stats-section{grid-template-columns:repeat(2,1fr)}}
+.stat-item{background:var(--dark-2);padding:32px 20px;text-align:center;transition:background .3s}
+.stat-item:hover{background:var(--dark-3)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:6px}
+.stat-unit{font-size:12px;color:var(--grey);margin-left:2px}
+.stat-label{font-size:8px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--grey)}
+/* VASTU */
+.vastu-strip{background:linear-gradient(90deg,transparent,rgba(196,163,90,.1),transparent);border-top:1px solid rgba(196,163,90,.15);border-bottom:1px solid rgba(196,163,90,.15);padding:18px 40px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;text-align:center}
+.vastu-icon{font-size:22px}
+.vastu-text{font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light)}
+.vastu-sep{color:#333}
+.vastu-desc{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--grey);font-style:italic}
+/* SECTION COMMONS */
+.section-num{font-size:9px;font-weight:500;letter-spacing:.38em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.section-num::before{content:'';display:block;width:26px;height:1px;background:var(--gold);flex-shrink:0}
+body.rtl .section-num{flex-direction:row-reverse}
+body.rtl .section-num::before{display:none}
+body.rtl .section-num::after{content:'';display:block;width:26px;height:1px;background:var(--gold);flex-shrink:0}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.01em}
+.section-title em{font-style:italic;color:var(--gold-light)}
+/* INTRO */
+.intro-section{padding:100px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:900px){.intro-section{grid-template-columns:1fr;gap:60px;padding:60px 24px}}
+.intro-header{margin-bottom:36px}
+.intro-body{font-size:14px;line-height:1.9;color:#aaa;margin-bottom:32px}
+.intro-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:8px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:1px solid #2e2e2e;padding:7px 14px;color:var(--grey-light);transition:all .3s;cursor:default}
+.tag:hover{border-color:var(--gold);color:var(--gold)}
+.intro-right{position:relative}
+.intro-img-main{width:100%;aspect-ratio:3/4;object-fit:cover}
+.intro-img-overlay{position:absolute;bottom:-28px;right:-28px;width:52%;aspect-ratio:1;object-fit:cover;border:3px solid var(--dark-2)}
+.intro-badge{position:absolute;top:28px;left:-28px;background:var(--gold);color:var(--dark);padding:18px 22px;text-align:center;z-index:2}
+body.rtl .intro-img-overlay{right:auto;left:-28px}
+body.rtl .intro-badge{left:auto;right:-28px}
+.intro-badge-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;line-height:1;display:block}
+.intro-badge-text{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:3px}
+@media(max-width:900px){.intro-img-overlay{display:none}.intro-badge{display:none}}
+/* GALLERY */
+.gallery-section{padding:0 0 100px}
+.gallery-header{padding:0 40px;margin-bottom:48px}
+.gallery-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr;grid-template-rows:340px 340px;gap:3px}
+@media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}.gallery-item.tall{grid-row:auto}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr;grid-template-rows:240px}.gallery-item.tall{grid-row:auto}}
+.gallery-item{overflow:hidden;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item.tall{grid-row:1/3}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 100%);font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey-light);opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-caption{opacity:1}
+/* HIGHLIGHTS */
+.highlights-section{padding:100px 40px;background:var(--dark-2)}
+@media(max-width:600px){.highlights-section{padding:60px 24px}}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+@media(max-width:900px){.highlights-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.highlights-grid{grid-template-columns:1fr}}
+.highlight-card{background:var(--dark-3);padding:48px 36px;position:relative;overflow:hidden;transition:background .3s}
+.highlight-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .4s ease}
+body.rtl .highlight-card::before{left:auto;right:0}
+.highlight-card:hover{background:#1f1f1f}
+.highlight-card:hover::before{height:100%}
+.highlight-icon{font-size:28px;margin-bottom:20px;display:block}
+.highlight-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--gold-light);margin-bottom:14px;line-height:1.2}
+.highlight-body{font-size:12px;line-height:1.85;color:var(--grey)}
+/* FLOOR PLANS */
+.floorplan-section{padding:100px 40px}
+@media(max-width:600px){.floorplan-section{padding:60px 24px}}
+.fp-tabs{display:flex;gap:2px;margin:48px 0 40px;border-bottom:1px solid #222;overflow-x:auto;scrollbar-width:none}
+.fp-tabs::-webkit-scrollbar{display:none}
+.fp-tab{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;padding:14px 28px;cursor:pointer;color:var(--grey);border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .3s;background:none;white-space:nowrap;font-family:'Montserrat',sans-serif}
+.fp-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.fp-tab:hover{color:var(--gold-light)}
+.fp-panel{display:none}
+.fp-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:800px){.fp-panel.active{grid-template-columns:1fr}}
+.fp-img-wrap{background:var(--dark-2);padding:32px;display:flex;align-items:center;justify-content:center}
+.fp-img-wrap img{max-width:100%;max-height:520px;object-fit:contain}
+.fp-info-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:28px;color:var(--gold-light)}
+.fp-rooms{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1e1e1e}
+.fp-room{background:var(--dark-2);padding:14px 18px}
+.fp-room-name{font-size:10px;color:var(--grey-light);margin-bottom:3px;font-weight:400}
+.fp-room-size{font-size:11px;color:var(--gold);font-family:'Tenor Sans',sans-serif;letter-spacing:.05em}
+/* AMENITIES */
+.amenities-section{padding:100px 0;background:var(--dark-2);overflow:hidden}
+@media(max-width:600px){.amenities-section{padding:60px 0}}
+.amenities-header{padding:0 40px;margin-bottom:56px}
+@media(max-width:600px){.amenities-header{padding:0 24px}}
+.amenities-track{display:flex;gap:3px;overflow-x:auto;padding:0 40px 32px;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.amenities-track::-webkit-scrollbar{display:none}
+@media(max-width:600px){.amenities-track{padding:0 24px 32px}}
+.amenity-card{flex:0 0 300px;scroll-snap-align:start;position:relative;overflow:hidden;height:400px}
+@media(max-width:600px){.amenity-card{flex:0 0 260px;height:340px}}
+.amenity-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.amenity-card:hover img{transform:scale(1.08)}
+.amenity-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.08) 60%)}
+.amenity-text{position:absolute;bottom:0;left:0;right:0;padding:28px 24px}
+.amenity-label{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.amenity-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--white);line-height:1.2}
+.scroll-hint{padding:0 40px;font-size:9px;letter-spacing:.2em;color:var(--grey);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:'→';font-size:14px;color:var(--gold)}
+body.rtl .scroll-hint{flex-direction:row-reverse}
+body.rtl .scroll-hint::after{content:'←'}
+/* MASTER PLAN */
+.masterplan-section{padding:100px 40px;background:var(--dark-3)}
+@media(max-width:600px){.masterplan-section{padding:60px 24px}}
+.masterplan-header{margin-bottom:56px}
+.masterplan-img{width:100%;max-width:1000px;margin:0 auto;display:block;border:1px solid #2a2a2a}
+/* PAYMENT */
+.payment-section{padding:100px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:900px){.payment-section{grid-template-columns:1fr;gap:60px;padding:60px 24px}}
+.payment-ring-outer{width:300px;height:300px;margin:0 auto;position:relative}
+svg.ring-chart{width:100%;height:100%;transform:rotate(-90deg)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ring-pct{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold-light);line-height:1}
+.ring-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey);margin-top:4px}
+.pay-legend{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+.legend-item{display:flex;align-items:center;gap:14px}
+.legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.legend-name{font-size:11px;letter-spacing:.08em;color:var(--grey-light);flex:1}
+.legend-pct{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light)}
+.pay-steps{display:flex;flex-direction:column;gap:2px}
+.pay-step{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:22px 24px;background:var(--dark-2);border-left:3px solid transparent;transition:all .3s}
+.pay-step:hover{border-left-color:var(--gold);background:var(--dark-3)}
+body.rtl .pay-step{border-left:none;border-right:3px solid transparent}
+body.rtl .pay-step:hover{border-right-color:var(--gold)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-style:italic}
+.step-name{font-size:12px;font-weight:400;color:var(--grey-light);letter-spacing:.04em}
+.step-pct{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold-light);text-align:right}
+.pay-disclaimer{font-size:10px;color:var(--grey);margin-top:20px;line-height:1.7}
+/* HANDOVER */
+.handover-banner{background:linear-gradient(135deg,#140f00,#0a0a0a 50%,#120e00);border-top:1px solid #251c00;border-bottom:1px solid #251c00;padding:90px 40px;text-align:center;position:relative;overflow:hidden}
+.handover-banner::before{content:'Q1 2027';position:absolute;font-family:'Cormorant Garamond',serif;font-size:clamp(80px,20vw,260px);font-weight:300;color:rgba(196,163,90,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.handover-label{font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:18px}
+.handover-label::before,.handover-label::after{content:'';width:50px;height:1px;flex-shrink:0}
+.handover-label::before{background:linear-gradient(to right,transparent,var(--gold))}
+.handover-label::after{background:linear-gradient(to left,transparent,var(--gold))}
+.handover-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,8vw,100px);font-weight:300;color:var(--gold-light);letter-spacing:.05em;margin-bottom:16px}
+.handover-sub{font-size:10px;letter-spacing:.2em;color:var(--grey);text-transform:uppercase}
+/* LOCATION */
+.location-section{padding:100px 40px;background:var(--dark-2)}
+@media(max-width:600px){.location-section{padding:60px 24px}}
+.location-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px}
+@media(max-width:800px){.location-grid{grid-template-columns:repeat(2,1fr)}}
+.location-item{background:var(--dark-3);padding:36px 28px;text-align:center;border-bottom:2px solid transparent;transition:all .3s}
+.location-item:hover{border-bottom-color:var(--gold);background:#1c1c1c}
+.location-icon{font-size:26px;margin-bottom:14px}
+.location-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.location-val{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold-light);font-weight:300}
+/* DEVELOPER */
+.developer-section{padding:100px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-top:1px solid #1a1a1a}
+@media(max-width:900px){.developer-section{grid-template-columns:1fr;padding:60px 24px}}
+.dev-logo{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,72px);font-weight:300;letter-spacing:.1em;color:var(--white);margin-bottom:24px;line-height:1}
+.dev-logo span{color:var(--gold-light)}
+.dev-sub{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+.dev-body{font-size:14px;line-height:1.9;color:#999}
+.dev-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.dev-img{width:100%;height:380px;object-fit:cover}
+/* CONTACT */
+.contact-section{padding:100px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.contact-section{grid-template-columns:1fr;padding:60px 24px}}
+.contact-body{font-size:14px;line-height:1.9;color:var(--grey);margin:28px 0 48px}
+.contact-details{display:flex;flex-direction:column;gap:20px}
+.contact-detail-item{border-left:2px solid #222;padding-left:18px;transition:border-color .3s}
+.contact-detail-item:hover{border-left-color:var(--gold)}
+body.rtl .contact-detail-item{border-left:none;border-right:2px solid #222;padding-left:0;padding-right:18px}
+body.rtl .contact-detail-item:hover{border-right-color:var(--gold)}
+.cd-label{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey);margin-bottom:3px}
+.cd-val{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-light)}
+/* FORM */
+.contact-form{display:flex;flex-direction:column;gap:2px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column}
+.form-group label{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);padding:14px 18px 0;background:var(--dark-2)}
+.form-group input,.form-group select,.form-group textarea{background:var(--dark-2);border:none;border-bottom:1px solid transparent;padding:6px 18px 14px;color:var(--white);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color .3s;resize:none;-webkit-appearance:none;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:var(--gold)}
+.form-group select option{background:var(--dark-3)}
+.form-submit{background:var(--gold);color:var(--dark);border:none;padding:20px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:2px;width:100%}
+.form-submit:hover{background:var(--gold-light)}
+/* FOOTER */
+footer{background:var(--dark-2);border-top:1px solid #1a1a1a;padding:48px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+@media(max-width:700px){footer{grid-template-columns:1fr;text-align:center;gap:20px}}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:.15em;color:var(--gold-light)}
+.footer-copy{font-size:9px;letter-spacing:.18em;color:var(--grey);text-align:center;line-height:1.8}
+.footer-disclaimer{font-size:8px;color:#444;margin-top:6px}
+.footer-links{display:flex;gap:24px;justify-content:flex-end;flex-wrap:wrap}
+@media(max-width:700px){.footer-links{justify-content:center}}
+.footer-link{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);transition:color .3s}
+.footer-link:hover{color:var(--gold)}
+/* WHATSAPP */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:300;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s;text-decoration:none}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.6)}
+body.rtl .wa-btn{right:auto;left:28px}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scrollPulse{0%,100%{opacity:1}50%{opacity:.3}}
+/* MOBILE NAV */
+@media(max-width:600px){
+  nav{padding:16px 20px}
+  .hero-content{padding:0 20px 48px}
+  .intro-section,.highlights-section,.floorplan-section,.payment-section,.location-section,.developer-section,.contact-section,.masterplan-section{padding:60px 20px}
+  .amenities-track{padding:0 20px 28px}
+  .amenities-header,.gallery-header,.scroll-hint{padding-left:20px;padding-right:20px}
+  .vastu-strip,.stats-section + *{padding-left:20px;padding-right:20px}
+  footer{padding:40px 20px}
+}
+/* Arabic font size adjustments */
+body[lang="ar"] .hero-title,body[lang="ar"] .section-title{font-size:clamp(28px,4vw,56px)}
+body[lang="ar"] .hero-label,body[lang="ar"] .section-num,body[lang="ar"] .stat-label,body[lang="ar"] .tag{letter-spacing:.05em}
+</style>
+</head>
+<body lang="en">
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://parikshitsharma.ae" class="nav-logo">PARIKSHIT <span>SHARMA</span></a>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Schedule Viewing</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <p class="hero-label" data-i18n="hero_label">Nad Al Sheba Gardens · Phase 4 · Dubai</p>
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_line1">A Signature</span><br>
+        <em data-i18n="hero_title_line2">Six-Bedroom</em><br>
+        <span data-i18n="hero_title_line3">Villa</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">Park Front &nbsp;·&nbsp; Pool Front &nbsp;·&nbsp; Vastu Compliant &nbsp;·&nbsp; B+G+2</p>
+    </div>
+    <div class="hero-price-block">
+      <p class="hero-price-label" data-i18n="price_label">Asking Price</p>
+      <p class="hero-price"><span>AED </span>19,000,000</p>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">↓</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner" id="marqueeInner">
+    <span class="marquee-item" data-i18n="tag_6br">6 Bedrooms ✦</span>
+    <span class="marquee-item">7,125 Sqft BUA ✦</span>
+    <span class="marquee-item">7,007 Sqft Plot ✦</span>
+    <span class="marquee-item" data-i18n="tag_park">Park Front ✦</span>
+    <span class="marquee-item" data-i18n="tag_pool">Pool Front ✦</span>
+    <span class="marquee-item" data-i18n="tag_vastu">Vastu Compliant ✦</span>
+    <span class="marquee-item">60–40 Payment ✦</span>
+    <span class="marquee-item">Q1 2027 Handover ✦</span>
+    <span class="marquee-item" data-i18n="tag_meraas">By Meraas ✦</span>
+    <span class="marquee-item" data-i18n="tag_garage">3-Car Garage ✦</span>
+    <span class="marquee-item" data-i18n="tag_6br">6 Bedrooms ✦</span>
+    <span class="marquee-item">7,125 Sqft BUA ✦</span>
+    <span class="marquee-item">7,007 Sqft Plot ✦</span>
+    <span class="marquee-item" data-i18n="tag_park">Park Front ✦</span>
+    <span class="marquee-item" data-i18n="tag_pool">Pool Front ✦</span>
+    <span class="marquee-item" data-i18n="tag_vastu">Vastu Compliant ✦</span>
+    <span class="marquee-item">60–40 Payment ✦</span>
+    <span class="marquee-item">Q1 2027 Handover ✦</span>
+    <span class="marquee-item" data-i18n="tag_meraas">By Meraas ✦</span>
+    <span class="marquee-item" data-i18n="tag_garage">3-Car Garage ✦</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stat-item reveal"><div class="stat-num" data-i18n="stat_6br">6</div><div class="stat-label" data-i18n="stat_6br_label">Bedrooms</div></div>
+  <div class="stat-item reveal reveal-d1"><div class="stat-num"><span data-i18n="stat_bua">7,125</span><span class="stat-unit" data-i18n="stat_bua_unit">sqft</span></div><div class="stat-label" data-i18n="stat_bua_label">Built-Up Area</div></div>
+  <div class="stat-item reveal reveal-d2"><div class="stat-num"><span data-i18n="stat_plot">7,007</span><span class="stat-unit" data-i18n="stat_plot_unit">sqft</span></div><div class="stat-label" data-i18n="stat_plot_label">Plot Size</div></div>
+  <div class="stat-item reveal reveal-d3"><div class="stat-num" data-i18n="stat_floors">B+G+2</div><div class="stat-label" data-i18n="stat_floors_label">Configuration</div></div>
+  <div class="stat-item reveal reveal-d4"><div class="stat-num" data-i18n="stat_garage">3</div><div class="stat-label" data-i18n="stat_garage_label">Car Garage</div></div>
+  <div class="stat-item reveal"><div class="stat-num" data-i18n="stat_payment">60%</div><div class="stat-label" data-i18n="stat_payment_label">Down Payment Plan</div></div>
+</div>
+
+<!-- VASTU -->
+<div class="vastu-strip reveal">
+  <span class="vastu-icon">🕉️</span>
+  <span class="vastu-text" data-i18n="vastu_text">Vastu Compliant</span>
+  <span class="vastu-sep">|</span>
+  <span class="vastu-desc" data-i18n="vastu_desc">Harmonised with ancient principles of space, energy and prosperity</span>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-left">
+    <div class="intro-header reveal">
+      <p class="section-num" data-i18n="sec01_num">01 — Overview</p>
+      <h2 class="section-title"><span data-i18n="sec01_title1">Where Rarity</span><br><em data-i18n="sec01_title2">Meets Refinement</em></h2>
+    </div>
+    <p class="intro-body reveal reveal-d1" data-i18n="intro_body1">This exceptional 6-bedroom signature villa at Nad Al Sheba Gardens Phase 4 occupies one of the community's most coveted positions — directly fronting both the landscaped park and the community pool. A rare double-frontage opportunity in one of Dubai's fastest-appreciating master communities.</p>
+    <p class="intro-body reveal reveal-d2" data-i18n="intro_body2">Spanning over 7,125 sq ft of built-up area across Basement + Ground + 2 upper floors, the villa offers an unmatched combination of volume, privacy, and natural light — with a full family suite on the top floor and a dedicated master terrace overlooking lush greenery.</p>
+    <div class="intro-tags reveal reveal-d3">
+      <span class="tag" data-i18n="tag_park">Park Front</span>
+      <span class="tag" data-i18n="tag_pool">Pool Front</span>
+      <span class="tag" data-i18n="tag_vastu">Vastu</span>
+      <span class="tag" data-i18n="tag_family">Family Room</span>
+      <span class="tag" data-i18n="tag_maid">Maid's Room</span>
+      <span class="tag" data-i18n="tag_driver">Driver's Room</span>
+      <span class="tag" data-i18n="tag_terrace">Master Terrace</span>
+      <span class="tag" data-i18n="tag_pvtpool">Private Pool</span>
+      <span class="tag" data-i18n="tag_grease">Grease Kitchen</span>
+      <span class="tag" data-i18n="tag_garage">3-Car Garage</span>
+      <span class="tag" data-i18n="tag_meraas">By Meraas</span>
+    </div>
+  </div>
+  <div class="intro-right reveal reveal-d2">
+    <img src="images/exterior.png" alt="Villa Exterior" class="intro-img-main">
+    <img src="images/interior-living.png" alt="Interior" class="intro-img-overlay">
+    <div class="intro-badge"><span class="intro-badge-num">19M</span><span class="intro-badge-text">AED</span></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-header reveal">
+    <p class="section-num" data-i18n="sec02_num">02 — Gallery</p>
+    <h2 class="section-title"><span data-i18n="sec02_title1">Life Inside</span><br><em data-i18n="sec02_title2">&amp; Beyond</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="images/interior-living.png" alt="Living">
+      <div class="gallery-caption" data-i18n="caption_living">Open-Plan Living</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/interior-bedroom.png" alt="Bedroom">
+      <div class="gallery-caption" data-i18n="caption_master">Master Bedroom</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/amenity-beach.png" alt="Lagoon">
+      <div class="gallery-caption" data-i18n="caption_lagoon">Crystal Lagoon</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/interior-dining.png" alt="Dining">
+      <div class="gallery-caption" data-i18n="caption_dining">Dining &amp; Kitchen</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/amenity-pool.png" alt="Pool">
+      <div class="gallery-caption" data-i18n="caption_pool">Community Pool</div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights-section">
+  <div class="reveal">
+    <p class="section-num" data-i18n="sec03_num">03 — Highlights</p>
+    <h2 class="section-title"><span data-i18n="sec03_title1">What Sets This</span><br><em data-i18n="sec03_title2">Villa Apart</em></h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="highlight-card reveal"><span class="highlight-icon">🌿</span><h3 class="highlight-title" data-i18n="h1_title">Double Frontage — Park &amp; Pool</h3><p class="highlight-body" data-i18n="h1_body">An extraordinarily rare position offering direct views of the community park on one side and the swimming pool on the other. Morning light floods every principal room.</p></div>
+    <div class="highlight-card reveal reveal-d1"><span class="highlight-icon">🕉️</span><h3 class="highlight-title" data-i18n="h2_title">Vastu Compliant</h3><p class="highlight-body" data-i18n="h2_body">The villa's orientation and spatial arrangement align with Vastu Shastra principles, ensuring balanced energy flow, prosperity, and well-being for its occupants.</p></div>
+    <div class="highlight-card reveal reveal-d2"><span class="highlight-icon">🏠</span><h3 class="highlight-title" data-i18n="h3_title">Full Staff Quarters</h3><p class="highlight-body" data-i18n="h3_body">Dedicated maid's room, driver's room, and separate staff toilets — thoughtfully positioned for privacy and functionality, maintaining the household's natural flow.</p></div>
+    <div class="highlight-card reveal reveal-d1"><span class="highlight-icon">🍽️</span><h3 class="highlight-title" data-i18n="h4_title">Dual Kitchen Layout</h3><p class="highlight-body" data-i18n="h4_body">A show kitchen for entertaining and a fully equipped grease kitchen for serious cooking — the hallmark of luxury living in Dubai's finest villas.</p></div>
+    <div class="highlight-card reveal reveal-d2"><span class="highlight-icon">🌇</span><h3 class="highlight-title" data-i18n="h5_title">Master Terrace</h3><p class="highlight-body" data-i18n="h5_body">The top-floor master suite opens onto a private 5.50m × 4.95m terrace — an outdoor sanctuary with sweeping views across the greens and skyline.</p></div>
+    <div class="highlight-card reveal reveal-d3"><span class="highlight-icon">🏗️</span><h3 class="highlight-title" data-i18n="h6_title">By Meraas</h3><p class="highlight-body" data-i18n="h6_body">Developed by Meraas — creator of City Walk, Bluewaters, and Port de La Mer. A name synonymous with quality, delivery, and long-term value in Dubai.</p></div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section class="floorplan-section">
+  <div class="reveal">
+    <p class="section-num" data-i18n="sec04_num">04 — Floor Plans</p>
+    <h2 class="section-title"><span data-i18n="sec04_title1">Explore Every</span><br><em data-i18n="sec04_title2">Level</em></h2>
+  </div>
+  <div class="fp-tabs">
+    <button class="fp-tab active" onclick="switchTab('gf')" data-i18n="tab_gf">Ground Floor</button>
+    <button class="fp-tab" onclick="switchTab('1f')" data-i18n="tab_1f">First Floor</button>
+    <button class="fp-tab" onclick="switchTab('2f')" data-i18n="tab_2f">Second Floor</button>
+  </div>
+  <div class="fp-panel active" id="tab-gf">
+    <div class="fp-img-wrap"><img src="images/floor-gf.png" alt="Ground Floor Plan"></div>
+    <div class="fp-info">
+      <h3 class="fp-info-title" data-i18n="fp_gf_title">Ground Floor</h3>
+      <div class="fp-rooms">
+        <div class="fp-room"><div class="fp-room-name">Family Living</div><div class="fp-room-size">5.40m × 6.40m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Dining</div><div class="fp-room-size">4.31m × 4.95m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Family Kitchen</div><div class="fp-room-size">2.75m × 5.65m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Grease Kitchen</div><div class="fp-room-size">2.95m × 5.65m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Guest Room</div><div class="fp-room-size">4.60m × 3.70m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Guest Ensuite</div><div class="fp-room-size">2.90m × 2.00m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Entrance Hall</div><div class="fp-room-size">2.50m × 3.77m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Powder Room</div><div class="fp-room-size">1.80m × 1.52m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Maid's Room</div><div class="fp-room-size">2.35m × 2.36m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Driver's Room</div><div class="fp-room-size">2.35m × 2.35m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Laundry</div><div class="fp-room-size">1.66m × 1.40m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Garage</div><div class="fp-room-size">6.29m × 8.99m</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="fp-panel" id="tab-1f">
+    <div class="fp-img-wrap"><img src="images/floor-1f.png" alt="First Floor Plan"></div>
+    <div class="fp-info">
+      <h3 class="fp-info-title" data-i18n="fp_1f_title">First Floor</h3>
+      <div class="fp-rooms">
+        <div class="fp-room"><div class="fp-room-name">Bedroom 01</div><div class="fp-room-size">4.60m × 3.60m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Ensuite 01</div><div class="fp-room-size">2.90m × 2.19m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Bedroom 02</div><div class="fp-room-size">3.60m × 3.75m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Ensuite 02</div><div class="fp-room-size">1.55m × 2.80m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Bedroom 03</div><div class="fp-room-size">3.75m × 4.00m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Bedroom 04</div><div class="fp-room-size">3.92m × 4.65m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Ensuite 04</div><div class="fp-room-size">1.60m × 3.25m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Family Room</div><div class="fp-room-size">4.40m × 4.53m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Shared Bathroom</div><div class="fp-room-size">1.60m × 2.80m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Balcony</div><div class="fp-room-size">1.50m × 3.56m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Closet</div><div class="fp-room-size">1.20m × 2.20m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Pantry</div><div class="fp-room-size">1.59m × 0.62m</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="fp-panel" id="tab-2f">
+    <div class="fp-img-wrap"><img src="images/floor-2f.png" alt="Second Floor Plan"></div>
+    <div class="fp-info">
+      <h3 class="fp-info-title" data-i18n="fp_2f_title">Second Floor — Master Suite</h3>
+      <div class="fp-rooms">
+        <div class="fp-room"><div class="fp-room-name">Master Bedroom</div><div class="fp-room-size">5.01m × 4.65m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Master Ensuite</div><div class="fp-room-size">4.34m × 3.75m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Master Closet</div><div class="fp-room-size">2.65m × 3.01m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Terrace</div><div class="fp-room-size">5.50m × 4.95m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Pantry</div><div class="fp-room-size">1.84m × 1.80m</div></div>
+        <div class="fp-room"><div class="fp-room-name">Store</div><div class="fp-room-size">0.75m × 2.15m</div></div>
+        <div class="fp-room"><div class="fp-room-name">MEP</div><div class="fp-room-size">2.50m × 11.35m</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities-section">
+  <div class="amenities-header reveal">
+    <p class="section-num" data-i18n="sec05_num">05 — Community</p>
+    <h2 class="section-title"><span data-i18n="sec05_title1">A World of</span><br><em data-i18n="sec05_title2">Experiences</em></h2>
+  </div>
+  <div class="amenities-track">
+    <div class="amenity-card"><img src="images/amenity-beach.png" alt="Lagoon"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen1_label">Leisure</p><h3 class="amenity-title" data-i18n="amen1_title">Crystal Lagoon Beach Club</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-pool.png" alt="Pool"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen2_label">Wellness</p><h3 class="amenity-title" data-i18n="amen2_title">Community Swimming Pools</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-green.png" alt="Lawn"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen3_label">Community</p><h3 class="amenity-title" data-i18n="amen3_title">Grand Event Lawn</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-lagoon.png" alt="Waterfront"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen4_label">Lifestyle</p><h3 class="amenity-title" data-i18n="amen4_title">Scenic Waterfront Walk</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-sports.png" alt="Sports"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen5_label">Active</p><h3 class="amenity-title" data-i18n="amen5_title">Sports Hub &amp; Padel Courts</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-playground.png" alt="Playground"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen6_label">Family</p><h3 class="amenity-title" data-i18n="amen6_title">Iconic Peacock Playground</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-park.png" alt="Park"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen7_label">Outdoors</p><h3 class="amenity-title" data-i18n="amen7_title">Landscaped Community Park</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-waterfront.png" alt="Cafe"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen8_label">Social</p><h3 class="amenity-title" data-i18n="amen8_title">Waterfront Café &amp; Pavilion</h3></div></div>
+    <div class="amenity-card"><img src="images/amenity-dogpark.png" alt="Dog Park"><div class="amenity-overlay"></div><div class="amenity-text"><p class="amenity-label" data-i18n="amen9_label">Pet Friendly</p><h3 class="amenity-title" data-i18n="amen9_title">Dedicated Dog Park</h3></div></div>
+  </div>
+  <p class="scroll-hint" data-i18n="scroll_hint">Scroll to explore all amenities</p>
+</section>
+
+<!-- MASTER PLAN -->
+<section class="masterplan-section">
+  <div class="masterplan-header reveal">
+    <p class="section-num" data-i18n="sec_mp_num">06 — Master Plan</p>
+    <h2 class="section-title"><span data-i18n="sec_mp_title1">The Full</span><br><em data-i18n="sec_mp_title2">Community</em></h2>
+  </div>
+  <img src="images/master-plan.png" alt="Community Master Plan" class="masterplan-img reveal">
+</section>
+
+<!-- PAYMENT PLAN -->
+<section class="payment-section">
+  <div class="payment-visual reveal">
+    <div class="payment-ring-outer">
+      <svg class="ring-chart" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#1a1a1a" stroke-width="13"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#C4A35A" stroke-width="13" stroke-dasharray="188.5 314.16" stroke-linecap="butt"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#2a2a2a" stroke-width="13" stroke-dasharray="125.66 314.16" stroke-dashoffset="-188.5" stroke-linecap="butt"/>
+      </svg>
+      <div class="ring-center"><span class="ring-pct">60/40</span><span class="ring-label" data-i18n="pay_ring_label">Payment Plan</span></div>
+    </div>
+    <div class="pay-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div><span class="legend-name" data-i18n="pay_leg1">During Construction</span><span class="legend-pct">60%</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2a2a2a;border:1px solid #444"></div><span class="legend-name" data-i18n="pay_leg2">On Handover — Q1 2027</span><span class="legend-pct">40%</span></div>
+    </div>
+  </div>
+  <div class="payment-info">
+    <div class="reveal">
+      <p class="section-num" data-i18n="sec_pay_num">07 — Payment Plan</p>
+      <h2 class="section-title"><span data-i18n="sec_pay_title1">Structured</span><br><em data-i18n="sec_pay_title2">for Flexibility</em></h2>
+    </div>
+    <div class="pay-steps" style="margin-top:40px">
+      <div class="pay-step reveal"><span class="step-num">01</span><span class="step-name" data-i18n="pay_step1_name">On Booking</span><span class="step-pct">20%</span></div>
+      <div class="pay-step reveal reveal-d1"><span class="step-num">02</span><span class="step-name" data-i18n="pay_step2_name">During Construction</span><span class="step-pct">40%</span></div>
+      <div class="pay-step reveal reveal-d2"><span class="step-num">03</span><span class="step-name" data-i18n="pay_step3_name">On Handover (Q1 2027)</span><span class="step-pct">40%</span></div>
+    </div>
+    <p class="pay-disclaimer reveal reveal-d3" data-i18n="pay_disclaimer">* Payment milestones are indicative. Final schedule subject to developer's confirmation.</p>
+  </div>
+</section>
+
+<!-- HANDOVER -->
+<div class="handover-banner">
+  <p class="handover-label" data-i18n="handover_label">Handover Timeline</p>
+  <h2 class="handover-title">Q1 2027</h2>
+  <p class="handover-sub" data-i18n="handover_sub">Keys in Hand · Nad Al Sheba Gardens Phase 4</p>
+</div>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="reveal">
+    <p class="section-num" data-i18n="sec_loc_num">08 — Location</p>
+    <h2 class="section-title"><span data-i18n="sec_loc_title1">At the Heart</span><br><em data-i18n="sec_loc_title2">of Dubai</em></h2>
+  </div>
+  <div class="location-grid">
+    <div class="location-item reveal"><div class="location-icon">🏙️</div><div class="location-label" data-i18n="loc_item1_label">Downtown Dubai</div><div class="location-val" data-i18n="loc_item1_val">10 min</div></div>
+    <div class="location-item reveal reveal-d1"><div class="location-icon">🏇</div><div class="location-label" data-i18n="loc_item2_label">Meydan Racecourse</div><div class="location-val" data-i18n="loc_item2_val">5 min</div></div>
+    <div class="location-item reveal reveal-d2"><div class="location-icon">✈️</div><div class="location-label" data-i18n="loc_item3_label">Dubai Int'l Airport</div><div class="location-val" data-i18n="loc_item3_val">15 min</div></div>
+    <div class="location-item reveal reveal-d3"><div class="location-icon">💼</div><div class="location-label" data-i18n="loc_item4_label">Business Bay</div><div class="location-val" data-i18n="loc_item4_val">12 min</div></div>
+  </div>
+</section>
+
+<!-- DEVELOPER -->
+<section class="developer-section">
+  <div class="reveal">
+    <p class="section-num" data-i18n="sec_dev_num">Developer</p>
+    <div class="dev-logo">MERAAS</div>
+    <p class="dev-sub" data-i18n="sec_dev_title">By Meraas</p>
+    <p class="dev-body" data-i18n="sec_dev_body">Meraas is committed to creating and consistently delivering developments that strengthen Dubai's position as a global real estate investment destination of choice. Nad Al Sheba Gardens Phase 4 continues the legacy of world-class design and community living.</p>
+    <div class="dev-tags">
+      <span class="tag">City Walk</span>
+      <span class="tag">Bluewaters</span>
+      <span class="tag">Port de La Mer</span>
+      <span class="tag">BVLGARI Residences</span>
+      <span class="tag">Nikki Beach</span>
+    </div>
+  </div>
+  <div class="reveal reveal-d2">
+    <img src="images/amenity-beach.png" alt="Community" class="dev-img">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info">
+    <div class="reveal">
+      <p class="section-num" data-i18n="sec08_num">09 — Contact</p>
+      <h2 class="section-title"><span data-i18n="sec08_title1">Begin Your</span><br><em data-i18n="sec08_title2">Journey</em></h2>
+    </div>
+    <p class="contact-body reveal reveal-d1" data-i18n="contact_body">Private viewings by appointment. This villa is presented exclusively by Parikshit Sharma. Schedule a personal consultation to explore this exceptional opportunity in full.</p>
+    <div class="contact-details">
+      <div class="contact-detail-item reveal reveal-d1"><div class="cd-label" data-i18n="contact_agent_label">Agent</div><div class="cd-val" data-i18n="contact_agent_val">Parikshit Sharma</div></div>
+      <div class="contact-detail-item reveal reveal-d2"><div class="cd-label" data-i18n="contact_web_label">Website</div><div class="cd-val" data-i18n="contact_web_val">parikshitsharma.ae</div></div>
+      <div class="contact-detail-item reveal reveal-d3"><div class="cd-label" data-i18n="contact_price_label">Listing Price</div><div class="cd-val" data-i18n="contact_price_val">AED 19,000,000</div></div>
+    </div>
+  </div>
+  <div class="contact-form reveal reveal-d2">
+    <div class="form-row">
+      <div class="form-group"><label data-i18n="form_fname">First Name</label><input type="text" data-i18n-ph="form_fname_ph" placeholder="Your name"></div>
+      <div class="form-group"><label data-i18n="form_lname">Last Name</label><input type="text" data-i18n-ph="form_lname_ph" placeholder="Family name"></div>
+    </div>
+    <div class="form-group"><label data-i18n="form_email">Email Address</label><input type="email" placeholder="your@email.com"></div>
+    <div class="form-group"><label data-i18n="form_phone">Phone / WhatsApp</label><input type="tel" placeholder="+971 XX XXX XXXX"></div>
+    <div class="form-group">
+      <label data-i18n="form_enquiry">Enquiry Type</label>
+      <select>
+        <option data-i18n="form_opt1">Schedule a Private Viewing</option>
+        <option data-i18n="form_opt2">Request More Details</option>
+        <option data-i18n="form_opt3">Payment Plan Enquiry</option>
+        <option data-i18n="form_opt4">Make an Offer</option>
+      </select>
+    </div>
+    <div class="form-group"><label data-i18n="form_message">Message</label><textarea rows="4" data-i18n-ph="form_message_ph" placeholder="Tell us more about your requirements..."></textarea></div>
+    <button class="form-submit" data-i18n="form_submit">Request Private Viewing</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PARIKSHIT SHARMA</div>
+  <div class="footer-copy">
+    <div data-i18n="footer_copy">© 2026 Parikshitsharma.ae · All Rights Reserved</div>
+    <div data-i18n="footer_sub" class="footer-disclaimer">Nad Al Sheba Gardens Phase 4 · 6BR Signature Villa · AED 19,000,000</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://parikshitsharma.ae" class="footer-link" data-i18n="footer_listings">Back to Listings</a>
+    <a href="#contact" class="footer-link" data-i18n="footer_contact">Contact</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/971585670856" class="wa-btn" target="_blank" title="WhatsApp">💬</a>
+
+<script>
+// ===== TRANSLATIONS =====
+const T = {
+  en:{nav_cta:"Schedule Viewing",hero_label:"Nad Al Sheba Gardens · Phase 4 · Dubai",hero_title_line1:"A Signature",hero_title_line2:"Six-Bedroom",hero_title_line3:"Villa",hero_sub:"Park Front · Pool Front · Vastu Compliant · B+G+2",price_label:"Asking Price",stat_6br:"6",stat_6br_label:"Bedrooms",stat_bua:"7,125",stat_bua_unit:"sqft",stat_bua_label:"Built-Up Area",stat_plot:"7,007",stat_plot_unit:"sqft",stat_plot_label:"Plot Size",stat_floors:"B+G+2",stat_floors_label:"Configuration",stat_garage:"3",stat_garage_label:"Car Garage",stat_payment:"60%",stat_payment_label:"Down Payment Plan",vastu_text:"Vastu Compliant",vastu_desc:"Harmonised with ancient principles of space, energy and prosperity",sec01_num:"01 — Overview",sec01_title1:"Where Rarity",sec01_title2:"Meets Refinement",intro_body1:"This exceptional 6-bedroom signature villa at Nad Al Sheba Gardens Phase 4 occupies one of the community's most coveted positions — directly fronting both the landscaped park and the community pool. A rare double-frontage opportunity in one of Dubai's fastest-appreciating master communities.",intro_body2:"Spanning over 7,125 sq ft of built-up area across Basement + Ground + 2 upper floors, the villa offers an unmatched combination of volume, privacy, and natural light — with a full family suite on the top floor and a dedicated master terrace overlooking lush greenery.",tag_park:"Park Front",tag_pool:"Pool Front",tag_vastu:"Vastu",tag_family:"Family Room",tag_maid:"Maid's Room",tag_driver:"Driver's Room",tag_terrace:"Master Terrace",tag_pvtpool:"Private Pool",tag_grease:"Grease Kitchen",tag_garage:"3-Car Garage",tag_meraas:"By Meraas",tag_6br:"6 Bedrooms",sec02_num:"02 — Gallery",sec02_title1:"Life Inside",sec02_title2:"& Beyond",caption_living:"Open-Plan Living",caption_master:"Master Bedroom",caption_lagoon:"Crystal Lagoon",caption_dining:"Dining & Kitchen",caption_pool:"Community Pool",sec03_num:"03 — Highlights",sec03_title1:"What Sets This",sec03_title2:"Villa Apart",h1_title:"Double Frontage — Park & Pool",h1_body:"An extraordinarily rare position offering direct views of the community park on one side and the swimming pool on the other. Morning light floods every principal room.",h2_title:"Vastu Compliant",h2_body:"The villa's orientation and spatial arrangement align with Vastu Shastra principles, ensuring balanced energy flow, prosperity, and well-being for its occupants.",h3_title:"Full Staff Quarters",h3_body:"Dedicated maid's room, driver's room, and separate staff toilets — thoughtfully positioned for privacy and functionality, maintaining the household's natural flow.",h4_title:"Dual Kitchen Layout",h4_body:"A show kitchen for entertaining and a fully equipped grease kitchen for serious cooking — the hallmark of luxury living in Dubai's finest villas.",h5_title:"Master Terrace",h5_body:"The top-floor master suite opens onto a private 5.50m × 4.95m terrace — an outdoor sanctuary with sweeping views across the greens and skyline.",h6_title:"By Meraas",h6_body:"Developed by Meraas — creator of City Walk, Bluewaters, and Port de La Mer. A name synonymous with quality, delivery, and long-term value in Dubai.",sec04_num:"04 — Floor Plans",sec04_title1:"Explore Every",sec04_title2:"Level",tab_gf:"Ground Floor",tab_1f:"First Floor",tab_2f:"Second Floor",fp_gf_title:"Ground Floor",fp_1f_title:"First Floor",fp_2f_title:"Second Floor — Master Suite",sec05_num:"05 — Community",sec05_title1:"A World of",sec05_title2:"Experiences",scroll_hint:"Scroll to explore",amen1_label:"Leisure",amen1_title:"Crystal Lagoon Beach Club",amen2_label:"Wellness",amen2_title:"Community Swimming Pools",amen3_label:"Community",amen3_title:"Grand Event Lawn",amen4_label:"Lifestyle",amen4_title:"Scenic Waterfront Walk",amen5_label:"Active",amen5_title:"Sports Hub & Padel Courts",amen6_label:"Family",amen6_title:"Iconic Peacock Playground",amen7_label:"Outdoors",amen7_title:"Landscaped Community Park",amen8_label:"Social",amen8_title:"Waterfront Café & Pavilion",amen9_label:"Pet Friendly",amen9_title:"Dedicated Dog Park",sec_mp_num:"06 — Master Plan",sec_mp_title1:"The Full",sec_mp_title2:"Community",sec_pay_num:"07 — Payment Plan",sec_pay_title1:"Structured",sec_pay_title2:"for Flexibility",pay_ring_label:"Payment Plan",pay_leg1:"During Construction",pay_leg2:"On Handover — Q1 2027",pay_step1_name:"On Booking",pay_step2_name:"During Construction",pay_step3_name:"On Handover (Q1 2027)",pay_disclaimer:"* Payment milestones are indicative. Final schedule subject to developer's confirmation.",handover_label:"Handover Timeline",handover_sub:"Keys in Hand · Nad Al Sheba Gardens Phase 4",sec_loc_num:"08 — Location",sec_loc_title1:"At the Heart",sec_loc_title2:"of Dubai",loc_item1_label:"Downtown Dubai",loc_item1_val:"10 min",loc_item2_label:"Meydan Racecourse",loc_item2_val:"5 min",loc_item3_label:"Dubai Int'l Airport",loc_item3_val:"15 min",loc_item4_label:"Business Bay",loc_item4_val:"12 min",sec_dev_num:"Developer",sec_dev_title:"By Meraas",sec_dev_body:"Meraas is committed to creating and consistently delivering developments that strengthen Dubai's position as a global real estate investment destination of choice. Nad Al Sheba Gardens Phase 4 continues the legacy of world-class design and community living.",sec08_num:"09 — Contact",sec08_title1:"Begin Your",sec08_title2:"Journey",contact_body:"Private viewings by appointment. This villa is presented exclusively by Parikshit Sharma. Schedule a personal consultation to explore this exceptional opportunity in full.",contact_agent_label:"Agent",contact_agent_val:"Parikshit Sharma",contact_web_label:"Website",contact_web_val:"parikshitsharma.ae",contact_price_label:"Listing Price",contact_price_val:"AED 19,000,000",form_fname:"First Name",form_fname_ph:"Your name",form_lname:"Last Name",form_lname_ph:"Family name",form_email:"Email Address",form_email_ph:"your@email.com",form_phone:"Phone / WhatsApp",form_phone_ph:"+971 XX XXX XXXX",form_enquiry:"Enquiry Type",form_opt1:"Schedule a Private Viewing",form_opt2:"Request More Details",form_opt3:"Payment Plan Enquiry",form_opt4:"Make an Offer",form_message:"Message",form_message_ph:"Tell us more about your requirements...",form_submit:"Request Private Viewing",footer_copy:"© 2026 Parikshitsharma.ae · All Rights Reserved",footer_sub:"Nad Al Sheba Gardens Phase 4 · 6BR Signature Villa · AED 19,000,000",footer_listings:"Back to Listings",footer_contact:"Contact"},
+  ru:{nav_cta:"Записаться на просмотр",hero_label:"Nad Al Sheba Gardens · Фаза 4 · Дубай",hero_title_line1:"Подписная",hero_title_line2:"Шестиспальная",hero_title_line3:"Вилла",hero_sub:"Вид на парк · Вид на бассейн · Vastu · B+G+2",price_label:"Цена продажи",stat_6br:"6",stat_6br_label:"Спальни",stat_bua:"7 125",stat_bua_unit:"кв.фт",stat_bua_label:"Общая площадь",stat_plot:"7 007",stat_plot_unit:"кв.фт",stat_plot_label:"Площадь участка",stat_floors:"B+G+2",stat_floors_label:"Конфигурация",stat_garage:"3",stat_garage_label:"Гараж",stat_payment:"60%",stat_payment_label:"Первоначальный взнос",vastu_text:"Соответствие Vastu",vastu_desc:"Гармонизировано с древними принципами пространства, энергии и процветания",sec01_num:"01 — Обзор",sec01_title1:"Там, где редкость",sec01_title2:"Встречает изысканность",intro_body1:"Эта исключительная вилла с 6 спальнями в Nad Al Sheba Gardens Фаза 4 занимает одно из наиболее желанных мест — с прямым выходом на ландшафтный парк и бассейн сообщества. Редкая возможность двойного фасада в одном из самых быстро растущих мастер-комьюнити Дубая.",intro_body2:"Площадью более 7 125 кв. футов на цокольном, первом и двух верхних этажах — непревзойдённое сочетание пространства, уединения и естественного освещения с семейным номером на верхнем этаже и главной террасой с видом на зелень.",tag_park:"Вид на парк",tag_pool:"Вид на бассейн",tag_vastu:"Vastu",tag_family:"Семейная комната",tag_maid:"Комн. горничной",tag_driver:"Комн. водителя",tag_terrace:"Главная терраса",tag_pvtpool:"Частный бассейн",tag_grease:"Рабочая кухня",tag_garage:"Гараж на 3 авто",tag_meraas:"От Meraas",tag_6br:"6 Спален",sec02_num:"02 — Галерея",sec02_title1:"Жизнь внутри",sec02_title2:"и за пределами",caption_living:"Открытая планировка",caption_master:"Главная спальня",caption_lagoon:"Хрустальная лагуна",caption_dining:"Столовая и кухня",caption_pool:"Общественный бассейн",sec03_num:"03 — Особенности",sec03_title1:"Что делает эту",sec03_title2:"Виллу особенной",h1_title:"Двойной фасад — Парк и Бассейн",h1_body:"Исключительно редкая позиция с прямым видом на парк с одной стороны и на бассейн с другой. Утренний свет наполняет каждую главную комнату.",h2_title:"Соответствие Vastu",h2_body:"Ориентация и пространственное расположение виллы соответствуют принципам Васту Шастры, обеспечивая сбалансированный поток энергии, процветание и благополучие.",h3_title:"Полный персонал",h3_body:"Отдельные комнаты для горничной и водителя — продуманно расположены для приватности и функциональности.",h4_title:"Две кухни",h4_body:"Парадная кухня для приёма гостей и полностью оборудованная рабочая кухня — отличительная черта роскошной жизни в лучших виллах Дубая.",h5_title:"Главная терраса",h5_body:"Главная спальня верхнего этажа открывается на частную террасу 5,50м × 4,95м с панорамным видом на зелёные насаждения.",h6_title:"От Meraas",h6_body:"Разработан Meraas — создателем City Walk, Bluewaters и Port de La Mer. Имя, ставшее символом качества и долгосрочной ценности в Дубае.",sec04_num:"04 — Планировки",sec04_title1:"Изучите каждый",sec04_title2:"Этаж",tab_gf:"Первый этаж",tab_1f:"Второй этаж",tab_2f:"Третий этаж",fp_gf_title:"Первый этаж",fp_1f_title:"Второй этаж",fp_2f_title:"Третий этаж — Главная спальня",sec05_num:"05 — Инфраструктура",sec05_title1:"Мир",sec05_title2:"Возможностей",scroll_hint:"Листайте для просмотра",amen1_label:"Отдых",amen1_title:"Пляжный клуб с хрустальной лагуной",amen2_label:"Здоровье",amen2_title:"Общественные бассейны",amen3_label:"Комьюнити",amen3_title:"Большая лужайка для мероприятий",amen4_label:"Стиль жизни",amen4_title:"Живописная прогулочная набережная",amen5_label:"Спорт",amen5_title:"Спортивный хаб и падел-корты",amen6_label:"Семья",amen6_title:"Площадка с павлинами",amen7_label:"На улице",amen7_title:"Ландшафтный парк",amen8_label:"Общение",amen8_title:"Кафе на набережной",amen9_label:"Питомцы",amen9_title:"Парк для собак",sec_mp_num:"06 — Генплан",sec_mp_title1:"Полный план",sec_mp_title2:"Комьюнити",sec_pay_num:"07 — Рассрочка",sec_pay_title1:"Структурировано",sec_pay_title2:"для гибкости",pay_ring_label:"План оплаты",pay_leg1:"Во время строительства",pay_leg2:"При сдаче — Q1 2027",pay_step1_name:"При бронировании",pay_step2_name:"Во время строительства",pay_step3_name:"При сдаче (Q1 2027)",pay_disclaimer:"* Этапы оплаты ориентировочные. Окончательный график подтверждается застройщиком.",handover_label:"Срок сдачи",handover_sub:"Ключи в руки · Nad Al Sheba Gardens Фаза 4",sec_loc_num:"08 — Расположение",sec_loc_title1:"В центре",sec_loc_title2:"Дубая",loc_item1_label:"Центр Дубая",loc_item1_val:"10 мин",loc_item2_label:"Ипподром Meydan",loc_item2_val:"5 мин",loc_item3_label:"Аэропорт Дубая",loc_item3_val:"15 мин",loc_item4_label:"Бизнес-Бей",loc_item4_val:"12 мин",sec_dev_num:"Застройщик",sec_dev_title:"От Meraas",sec_dev_body:"Meraas создаёт проекты мирового уровня, укрепляя позиции Дубая как глобального центра инвестиций в недвижимость. Nad Al Sheba Gardens Phase 4 продолжает традиции качества и современного образа жизни.",sec08_num:"09 — Контакты",sec08_title1:"Начните своё",sec08_title2:"Путешествие",contact_body:"Частные просмотры только по предварительной записи. Эта вилла представлена исключительно Parikshit Sharma.",contact_agent_label:"Агент",contact_agent_val:"Parikshit Sharma",contact_web_label:"Сайт",contact_web_val:"parikshitsharma.ae",contact_price_label:"Цена",contact_price_val:"19 000 000 AED",form_fname:"Имя",form_fname_ph:"Ваше имя",form_lname:"Фамилия",form_lname_ph:"Фамилия",form_email:"Email",form_email_ph:"your@email.com",form_phone:"Телефон / WhatsApp",form_phone_ph:"+971 XX XXX XXXX",form_enquiry:"Тип запроса",form_opt1:"Записаться на просмотр",form_opt2:"Запросить детали",form_opt3:"Вопрос о рассрочке",form_opt4:"Сделать предложение",form_message:"Сообщение",form_message_ph:"Расскажите о ваших требованиях...",form_submit:"Записаться на просмотр",footer_copy:"© 2026 Parikshitsharma.ae · Все права защищены",footer_sub:"Nad Al Sheba Gardens Фаза 4 · Вилла 6 спален · 19 000 000 AED",footer_listings:"К листингам",footer_contact:"Контакты"},
+  zh:{nav_cta:"预约看房",hero_label:"纳德·谢巴花园 · 第4期 · 迪拜",hero_title_line1:"豪华",hero_title_line2:"六卧室",hero_title_line3:"别墅",hero_sub:"公园景观 · 泳池景观 · Vastu合规 · B+G+2",price_label:"要价",stat_6br:"6",stat_6br_label:"卧室",stat_bua:"7,125",stat_bua_unit:"平方英尺",stat_bua_label:"建筑面积",stat_plot:"7,007",stat_plot_unit:"平方英尺",stat_plot_label:"地块面积",stat_floors:"B+G+2",stat_floors_label:"楼层配置",stat_garage:"3",stat_garage_label:"车库",stat_payment:"60%",stat_payment_label:"分期付款",vastu_text:"Vastu合规",vastu_desc:"与古老的空间、能量和繁荣原则和谐统一",sec01_num:"01 — 概览",sec01_title1:"稀有与",sec01_title2:"精致的相遇",intro_body1:"这座位于纳德·谢巴花园第4期的卓越6卧室别墅，占据社区最受追捧的位置之一——直接面向景观公园和社区泳池。在迪拜升值最快的大型社区之一中，罕见的双面临街机会。",intro_body2:"建筑面积超过7,125平方英尺，跨越地下室+地面层+2层，提供无与伦比的空间、私密性和自然采光——顶层设有完整的家庭套房和专属主卧露台，俯瞰郁郁葱葱的绿色景观。",tag_park:"公园景观",tag_pool:"泳池景观",tag_vastu:"Vastu",tag_family:"家庭室",tag_maid:"女佣房",tag_driver:"司机房",tag_terrace:"主卧露台",tag_pvtpool:"私人泳池",tag_grease:"油烟厨房",tag_garage:"三车车库",tag_meraas:"Meraas开发",tag_6br:"六卧室",sec02_num:"02 — 画廊",sec02_title1:"内外",sec02_title2:"的生活",caption_living:"开放式客厅",caption_master:"主卧室",caption_lagoon:"水晶泻湖",caption_dining:"餐厅与厨房",caption_pool:"社区泳池",sec03_num:"03 — 亮点",sec03_title1:"是什么让这座",sec03_title2:"别墅与众不同",h1_title:"双面临街——公园与泳池",h1_body:"极为罕见的位置，一侧直接俯瞰社区公园，另一侧俯瞰游泳池。晨光充满每个主要房间。",h2_title:"Vastu合规",h2_body:"别墅的朝向和空间布局符合Vastu Shastra原则，确保居住者的能量流动平衡、繁荣与健康。",h3_title:"完整的员工宿舍",h3_body:"专属女佣房、司机房和独立员工厕所——经过深思熟虑的布局，保护隐私和功能性。",h4_title:"双厨房设计",h4_body:"展示厨房用于招待，配备齐全的油烟厨房用于正式烹饪——迪拜最优质别墅奢华生活的标志。",h5_title:"主卧露台",h5_body:"顶层主套房通向私人5.50米×4.95米露台——俯瞰绿地和天际线的户外圣所。",h6_title:"Meraas开发",h6_body:"由Meraas开发——City Walk、Bluewaters和Port de La Mer的创造者。在迪拜，品质与长期价值的代名词。",sec04_num:"04 — 平面图",sec04_title1:"探索每一个",sec04_title2:"楼层",tab_gf:"地面层",tab_1f:"一层",tab_2f:"二层",fp_gf_title:"地面层",fp_1f_title:"一层",fp_2f_title:"二层 — 主套房",sec05_num:"05 — 社区设施",sec05_title1:"丰富多彩的",sec05_title2:"体验世界",scroll_hint:"滑动查看所有设施",amen1_label:"休闲",amen1_title:"水晶泻湖海滩俱乐部",amen2_label:"健康",amen2_title:"社区游泳池",amen3_label:"社区",amen3_title:"大型活动草坪",amen4_label:"生活方式",amen4_title:"风景如画的滨水步道",amen5_label:"运动",amen5_title:"运动中心与壁球场",amen6_label:"家庭",amen6_title:"标志性孔雀儿童乐园",amen7_label:"户外",amen7_title:"景观社区公园",amen8_label:"社交",amen8_title:"滨水咖啡馆与凉亭",amen9_label:"宠物友好",amen9_title:"专属宠物公园",sec_mp_num:"06 — 总平面图",sec_mp_title1:"完整社区",sec_mp_title2:"规划图",sec_pay_num:"07 — 付款计划",sec_pay_title1:"灵活的",sec_pay_title2:"付款方式",pay_ring_label:"付款计划",pay_leg1:"建设期间",pay_leg2:"交房时 — 2027年Q1",pay_step1_name:"预订时",pay_step2_name:"建设期间",pay_step3_name:"交房时（2027年Q1）",pay_disclaimer:"* 付款里程碑仅供参考。最终计划以开发商确认为准。",handover_label:"交房时间",handover_sub:"即将交钥匙 · 纳德·谢巴花园第4期",sec_loc_num:"08 — 地理位置",sec_loc_title1:"位于迪拜",sec_loc_title2:"心脏地带",loc_item1_label:"迪拜市中心",loc_item1_val:"10分钟",loc_item2_label:"美丹赛马场",loc_item2_val:"5分钟",loc_item3_label:"迪拜国际机场",loc_item3_val:"15分钟",loc_item4_label:"商业湾",loc_item4_val:"12分钟",sec_dev_num:"开发商",sec_dev_title:"Meraas出品",sec_dev_body:"Meraas致力于持续开发优质项目，巩固迪拜作为全球房地产投资目的地的地位。纳德·谢巴花园第4期延续了世界级设计和社区生活的传统。",sec08_num:"09 — 联系我们",sec08_title1:"开启您的",sec08_title2:"旅程",contact_body:"私人参观须预约。此别墅由Parikshit Sharma独家代理。请安排个人咨询。",contact_agent_label:"经纪人",contact_agent_val:"Parikshit Sharma",contact_web_label:"网站",contact_web_val:"parikshitsharma.ae",contact_price_label:"挂牌价格",contact_price_val:"1900万迪拉姆",form_fname:"名",form_fname_ph:"您的名字",form_lname:"姓",form_lname_ph:"您的姓氏",form_email:"电子邮箱",form_email_ph:"your@email.com",form_phone:"电话 / WhatsApp",form_phone_ph:"+971 XX XXX XXXX",form_enquiry:"咨询类型",form_opt1:"预约私人看房",form_opt2:"索取更多详情",form_opt3:"付款计划咨询",form_opt4:"提交报价",form_message:"留言",form_message_ph:"请告诉我们您的需求...",form_submit:"预约私人看房",footer_copy:"© 2026 Parikshitsharma.ae · 保留所有权利",footer_sub:"纳德·谢巴花园第4期 · 6卧室豪华别墅 · 1900万迪拉姆",footer_listings:"返回房源",footer_contact:"联系我们"},
+  ar:{nav_cta:"حجز معاينة",hero_label:"حدائق ند الشبا · المرحلة الرابعة · دبي",hero_title_line1:"فيلا فاخرة",hero_title_line2:"بست غرف",hero_title_line3:"نوم",hero_sub:"إطلالة على الحديقة · إطلالة على المسبح · متوافق مع Vastu · B+G+2",price_label:"سعر الطلب",stat_6br:"٦",stat_6br_label:"غرف نوم",stat_bua:"٧٬١٢٥",stat_bua_unit:"قدم²",stat_bua_label:"مساحة البناء",stat_plot:"٧٬٠٠٧",stat_plot_unit:"قدم²",stat_plot_label:"مساحة الأرض",stat_floors:"B+G+2",stat_floors_label:"التكوين",stat_garage:"٣",stat_garage_label:"مرآب",stat_payment:"٦٠٪",stat_payment_label:"خطة الدفع",vastu_text:"متوافق مع Vastu",vastu_desc:"متناغم مع المبادئ القديمة للفضاء والطاقة والازدهار",sec01_num:"٠١ — نظرة عامة",sec01_title1:"حيث تلتقي الندرة",sec01_title2:"بالرقي",intro_body1:"تحتل هذه الفيلا الاستثنائية المكونة من 6 غرف نوم في حدائق ند الشبا المرحلة الرابعة أحد أكثر المواقع طلباً في المجتمع — بإطلالة مباشرة على الحديقة المشجرة ومسبح المجتمع. فرصة نادرة للواجهة المزدوجة في أحد أسرع المجمعات السكنية الفاخرة ارتفاعاً في دبي.",intro_body2:"تمتد على مساحة أكثر من 7,125 قدم مربع موزعة على طوابق السرداب والأرضي وطابقين علويين، وتقدم الفيلا مزيجاً لا مثيل له من الحجم والخصوصية والإضاءة الطبيعية.",tag_park:"إطلالة على الحديقة",tag_pool:"إطلالة على المسبح",tag_vastu:"Vastu",tag_family:"غرفة عائلية",tag_maid:"غرفة الخادمة",tag_driver:"غرفة السائق",tag_terrace:"شرفة رئيسية",tag_pvtpool:"مسبح خاص",tag_grease:"مطبخ خارجي",tag_garage:"مرآب لـ٣ سيارات",tag_meraas:"من ميراس",tag_6br:"٦ غرف نوم",sec02_num:"٠٢ — معرض الصور",sec02_title1:"الحياة في الداخل",sec02_title2:"وما وراءها",caption_living:"مساحة معيشية مفتوحة",caption_master:"غرفة النوم الرئيسية",caption_lagoon:"بحيرة كريستال",caption_dining:"غرفة الطعام والمطبخ",caption_pool:"مسبح المجتمع",sec03_num:"٠٣ — المميزات",sec03_title1:"ما يجعل هذه الفيلا",sec03_title2:"استثنائية",h1_title:"واجهة مزدوجة — الحديقة والمسبح",h1_body:"موقع نادر للغاية يوفر إطلالات مباشرة على حديقة المجتمع من جهة ومسبح السباحة من جهة أخرى. يغمر ضوء الصباح كل غرفة رئيسية.",h2_title:"متوافق مع Vastu",h2_body:"توجه الفيلا وترتيبها المكاني يتوافقان مع مبادئ Vastu Shastra، مما يضمن تدفقاً متوازناً للطاقة والازدهار ورفاهية السكان.",h3_title:"أجنحة الطاقم الكاملة",h3_body:"غرفة خادمة وغرفة سائق ودورات مياه منفصلة — موضوعة بعناية لتحقيق الخصوصية والوظيفة.",h4_title:"تصميم مطبخ مزدوج",h4_body:"مطبخ عرض للضيافة ومطبخ خارجي مجهز بالكامل — سمة الحياة الفاخرة في أفضل فيلل دبي.",h5_title:"الشرفة الرئيسية",h5_body:"يُفتح الجناح الرئيسي على شرفة خاصة 5.50م × 4.95م — ملاذ في الهواء الطلق يطل على الخضرة والأفق.",h6_title:"من ميراس",h6_body:"طوّرت من قِبَل ميراس — مبتكر سيتي ووك وبلوووترز وبورت دو لا مير. اسم مرادف للجودة والتسليم والقيمة في دبي.",sec04_num:"٠٤ — المخططات",sec04_title1:"استكشف كل",sec04_title2:"طابق",tab_gf:"الطابق الأرضي",tab_1f:"الطابق الأول",tab_2f:"الطابق الثاني",fp_gf_title:"الطابق الأرضي",fp_1f_title:"الطابق الأول",fp_2f_title:"الطابق الثاني — الجناح الرئيسي",sec05_num:"٠٥ — مرافق المجتمع",sec05_title1:"عالم من",sec05_title2:"التجارب",scroll_hint:"اسحب لاستكشاف المرافق",amen1_label:"ترفيه",amen1_title:"نادي شاطئ بحيرة كريستال",amen2_label:"عافية",amen2_title:"مسابح المجتمع",amen3_label:"مجتمع",amen3_title:"الميدان الكبير للفعاليات",amen4_label:"نمط حياة",amen4_title:"ممشى الواجهة المائية",amen5_label:"رياضة",amen5_title:"مركز رياضي وملاعب بادل",amen6_label:"عائلة",amen6_title:"ملعب الطاووس الشهير",amen7_label:"في الهواء الطلق",amen7_title:"الحديقة المشجرة",amen8_label:"اجتماعي",amen8_title:"مقهى على الواجهة المائية",amen9_label:"صديق للحيوانات",amen9_title:"حديقة مخصصة للكلاب",sec_mp_num:"٠٦ — المخطط الرئيسي",sec_mp_title1:"المخطط الكامل",sec_mp_title2:"للمجتمع",sec_pay_num:"٠٧ — خطة الدفع",sec_pay_title1:"مُهيكلة",sec_pay_title2:"للمرونة",pay_ring_label:"خطة الدفع",pay_leg1:"خلال الإنشاء",pay_leg2:"عند التسليم — الربع الأول ٢٠٢٧",pay_step1_name:"عند الحجز",pay_step2_name:"خلال الإنشاء",pay_step3_name:"عند التسليم (الربع الأول ٢٠٢٧)",pay_disclaimer:"* مراحل الدفع استرشادية. الجدول النهائي مشروط بتأكيد المطور.",handover_label:"موعد التسليم",handover_sub:"المفاتيح في يدك · حدائق ند الشبا المرحلة الرابعة",sec_loc_num:"٠٨ — الموقع",sec_loc_title1:"في قلب",sec_loc_title2:"دبي",loc_item1_label:"وسط مدينة دبي",loc_item1_val:"١٠ دقائق",loc_item2_label:"ميدان ميدان",loc_item2_val:"٥ دقائق",loc_item3_label:"مطار دبي الدولي",loc_item3_val:"١٥ دقيقة",loc_item4_label:"الخليج التجاري",loc_item4_val:"١٢ دقيقة",sec_dev_num:"المطور",sec_dev_title:"من ميراس",sec_dev_body:"تلتزم ميراس بإنشاء وتسليم مشاريع تعزز مكانة دبي كوجهة عالمية للاستثمار العقاري. حدائق ند الشبا المرحلة الرابعة تواصل إرث التصميم العالمي والمعيشة المجتمعية.",sec08_num:"٠٩ — تواصل معنا",sec08_title1:"ابدأ",sec08_title2:"رحلتك",contact_body:"المعاينات الخاصة بموعد مسبق. هذه الفيلا مُقدَّمة حصرياً من قِبَل باريكشيت شارما.",contact_agent_label:"الوكيل",contact_agent_val:"Parikshit Sharma",contact_web_label:"الموقع",contact_web_val:"parikshitsharma.ae",contact_price_label:"سعر القائمة",contact_price_val:"١٩٬٠٠٠٬٠٠٠ درهم",form_fname:"الاسم الأول",form_fname_ph:"اسمك",form_lname:"اسم العائلة",form_lname_ph:"اسم العائلة",form_email:"البريد الإلكتروني",form_email_ph:"your@email.com",form_phone:"الهاتف / واتساب",form_phone_ph:"+971 XX XXX XXXX",form_enquiry:"نوع الاستفسار",form_opt1:"جدولة معاينة خاصة",form_opt2:"طلب مزيد من التفاصيل",form_opt3:"استفسار عن خطة الدفع",form_opt4:"تقديم عرض",form_message:"الرسالة",form_message_ph:"أخبرنا عن متطلباتك...",form_submit:"طلب معاينة خاصة",footer_copy:"© ٢٠٢٦ Parikshitsharma.ae · جميع الحقوق محفوظة",footer_sub:"حدائق ند الشبا المرحلة الرابعة · فيلا ٦ غرف نوم · ١٩ مليون درهم",footer_listings:"العودة إلى القوائم",footer_contact:"تواصل"}
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const d = T[lang];
+  const isRTL = lang === 'ar';
+  document.documentElement.lang = lang;
+  document.body.classList.toggle('rtl', isRTL);
+  document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+  // Update all [data-i18n] elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(d[key] !== undefined) el.textContent = d[key];
+  });
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if(d[key] !== undefined) el.placeholder = d[key];
+  });
+  // Lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang || (btn.textContent.trim() === '中文' && lang === 'zh') || (btn.textContent.trim() === 'AR' && lang === 'ar'));
+  });
+  // Special fix for lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const map = {EN:'en',RU:'ru','中文':'zh',AR:'ar'};
+    btn.classList.toggle('active', map[btn.textContent.trim()] === lang);
+  });
+}
+
+// FLOOR PLAN TABS
+function switchTab(id) {
+  document.querySelectorAll('.fp-tab').forEach((t,i) => t.classList.toggle('active',['gf','1f','2f'][i]===id));
+  document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+},{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// CURSOR (desktop)
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+if(cur && ring && window.innerWidth >= 1024) {
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function anim(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim);})();
+  document.querySelectorAll('a,button,.gallery-item,.amenity-card,.highlight-card,.stat-item,.location-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+  });
+}
+</script>
+</body>
+</html>
